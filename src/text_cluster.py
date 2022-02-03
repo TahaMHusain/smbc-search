@@ -64,10 +64,11 @@ def word_boxes(path):
 
 
 def main():
-    path = r'../data/images/raw/slightly-gayer.png'
-    panels = panel_boxes(path)
+    img_name = 'real-job'
+    path = f'../data/images/raw/{img_name}.png'
+    panels = letter_boxes(path)
     for i in range(len(panels)):
-        opath = f'../data/images/panel-boxed/slightly-gayer/{i}.png'
+        opath = f'../data/images/panel-boxed/{img_name}/{i}.png'
         cv2.imwrite(opath, panels[i])
 
     show_images(letter_boxes(path))
