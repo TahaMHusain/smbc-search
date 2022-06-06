@@ -1,3 +1,5 @@
+import os
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,6 +20,7 @@ def vert_split(image):
 
 def show_images(images, limit=6):
     images = [images] if isinstance(images, np.ndarray) else images
+    print(f'num images to show: {len(images)}')
     for i in range(len(images)):
         split_imgs = vert_split(images[i]) if images[i].shape[0] > 1000 else [images[i]]
         for j in range(min(len(split_imgs), limit)):

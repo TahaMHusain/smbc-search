@@ -91,7 +91,15 @@ def panel_boxes_hough(path):
 
 
 def main():
-    display = panel_boxes(r'../data/images/raw/three-year-gym-membership.png')
+    img_name = 'three-year-gym-membership'
+    path = f'../data/images/raw/{img_name}.png'
+    display = panel_boxes(path)
+    for i in range(len(display)):
+        opath = f'../data/images/panel-boxed/{img_name}/{i}.png'
+        cv2.imwrite(opath, display[i])
+    for d in display:
+        kernel = np.ones((5, 5), np.uint8)
+        img_erosion = cv2.erode(d, kernel, iterations=1)
     show_images(display)
 
 

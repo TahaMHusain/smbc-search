@@ -1,3 +1,5 @@
+import os
+
 import cv2
 import pytesseract
 import numpy as np
@@ -16,12 +18,13 @@ def letter_boxes(path):
     panels = panel_boxes(path)
     lboxed = []
 
-    for panel in panels[:1]:
+    print(f'num panels: {len(panels)}')
+    for i, panel in enumerate(panels):
         pnl_h = panel.shape[0]
 
-        print(pytesseract.image_to_string(panel))
+        # print(pytesseract.image_to_string(panel))
 
-        # Tesseract's image_to_boxes for boxes around letters (but misses some?)
+        # Tesseract's image_to_boxes for boxes around letters (terrible performance)
         col_boxes = pytesseract.image_to_boxes(panel)
         col_boxed = panel.copy()
         for box in col_boxes.splitlines():
@@ -41,7 +44,7 @@ def letter_boxes(path):
 
         lboxed.append(col_boxed)
         lboxed.append(bin_boxed)
-
+    print(f'num boxes: {len(lboxed)}')
     return lboxed
 
 
@@ -64,12 +67,8 @@ def word_boxes(path):
 
 
 def main():
-    img_name = 'real-job'
+    img_name = 'insincere-apology'
     path = f'../data/images/raw/{img_name}.png'
-    panels = letter_boxes(path)
-    for i in range(len(panels)):
-        opath = f'../data/images/panel-boxed/{img_name}/{i}.png'
-        cv2.imwrite(opath, panels[i])
 
     show_images(letter_boxes(path))
 
