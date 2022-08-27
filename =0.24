@@ -1,0 +1,11 @@
+Collecting scikit-learn
+  Downloading scikit_learn-1.1.2-cp39-cp39-win_amd64.whl (7.4 MB)
+     ---------------------------------------- 7.4/7.4 MB 10.1 MB/s eta 0:00:00
+Requirement already satisfied: numpy>=1.17.3 in c:\users\taha.husain\appdata\roaming\python\python39\site-packages (from scikit-learn) (1.21.2)
+Collecting threadpoolctl>=2.0.0
+  Using cached threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+Collecting joblib>=1.0.0
+  Using cached joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+Requirement already satisfied: scipy>=1.3.2 in c:\users\taha.husain\appdata\roaming\python\python39\site-packages (from scikit-learn) (1.7.1)
+Installing collected packages: threadpoolctl, joblib, scikit-learn
+Successfully installed joblib-1.1.0 scikit-learn-1.1.2 threadpoolctl-3.1.0

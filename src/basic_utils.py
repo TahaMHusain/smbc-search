@@ -2,7 +2,6 @@ import os
 
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
 # 1000 is height of my monitor, so ensure images are shorter than that
 MAX_HEIGHT = 1000

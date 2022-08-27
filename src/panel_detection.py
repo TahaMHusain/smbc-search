@@ -92,6 +92,7 @@ def panel_boxes_hough(path):
 
 def main():
     img_name = 'three-year-gym-membership'
+
     path = f'../data/images/raw/{img_name}.png'
     display = panel_boxes(path)
     for i in range(len(display)):
