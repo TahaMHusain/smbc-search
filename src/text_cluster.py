@@ -3,7 +3,6 @@ import os
 import cv2
 import pytesseract
 import numpy as np
-import matplotlib.pyplot as plt
 
 from src.basic_utils import show_images, image_binary, image_canny
 from src.panel_detection import panel_boxes
@@ -67,6 +66,8 @@ def word_boxes(path):
 
 
 def main():
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
+
     img_name = 'insincere-apology'
     path = f'../data/images/raw/{img_name}.png'
 
